@@ -11,8 +11,11 @@ Los componentes tienen estilos, una logica, un fichero de testing y un markup qu
 
 Estos componentes se pueden reutilizar a lo largo de nuestra aplicación, por ejemplo, podemos crear un boton como componente y reutilizarlo en otros componentes.
 
+### Crear un componente
+ng generate component name-component
 
-
+O podemos simplificarlo
+ng g c name-component
 
 
 
