@@ -11,18 +11,28 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ButtonComponent } from './button/button.component';
+import { InterpolacionComponent } from './interpolacion/interpolacion.component';
+import { NavesComponent } from './naves/naves.component';
+import { EnlaceDeDatosBidireccionalComponent } from './enlace-de-datos-bidireccional/enlace-de-datos-bidireccional.component';
+import { FormsModule } from '@angular/forms';
+import { DirectivasComponent } from './directivas/directivas.component';
 
 @NgModule({
   // En declarations, declaramos los componentes a utilizar
   declarations: [
     AppComponent,
-    ButtonComponent
+    ButtonComponent,
+    InterpolacionComponent,
+    NavesComponent,
+    EnlaceDeDatosBidireccionalComponent,
+    DirectivasComponent
   ],
   // En imports, importamos o inyectamos modulos por ejemplo HttpClientModule
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   // En providers, podemos inyectar servicios en nuestra aplicacion
   providers: [],

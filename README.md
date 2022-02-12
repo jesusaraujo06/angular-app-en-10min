@@ -11,13 +11,26 @@ Los componentes tienen estilos, una logica, un fichero de testing y un markup qu
 
 Estos componentes se pueden reutilizar a lo largo de nuestra aplicación, por ejemplo, podemos crear un boton como componente y reutilizarlo en otros componentes.
 
-### Crear un componente
+## Crear un componente
 ng generate component name-component
 
 O podemos simplificarlo
 ng g c name-component
 
+## ¿Que es una directiva?
+Las directivas son como atributos que pueden cambiar la apariencia o el comportamiento del DOM element.
 
+## Tipos de directivas
+- Estructurales:
+  Se refiere a que pueden modificar elementos del DOM, por ejemplo, ocultar o mostrar una etiqueta HTML, un ejemplo de directivas estructurales son:
+  - ngFor
+  - ngIf
+
+- De atributos
+
+- Directivas customs
+
+- Componentes - son directivas con template
 
 
 

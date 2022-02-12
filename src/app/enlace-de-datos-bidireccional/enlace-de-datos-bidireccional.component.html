@@ -1,0 +1,22 @@
+
+<hr>
+
+<h1>05 - Enlace de datos bidireccional</h1>
+
+<p>El nombre es: {{ name }}</p>
+
+<!-- En el input vamos a utilizar la sintaxis del Two-way data binding
+que tambien es conocida como banana box, porque la banana seria los corchertes 
+y la banana los parentesis -->
+<input type="text" [(ngModel)]="name">
+
+<!-- Podemos probarlo yendo al navegador y escribiendo algo -->
+
+<!-- 
+    Para poder hacer Two-way data binding o enlace de datos bidireccional
+    debemos utilizar algo que se conoce en angular como 'ngModel'
+    Y para poder utilizar el 'ngModel' necesitamos importar en la clase
+    el modulo de formulario.
+
+    Para importarlo debemos ir a 'app.module.ts y en los imports, agregar FormsModule'
+ -->

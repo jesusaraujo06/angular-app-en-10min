@@ -1,0 +1,76 @@
+<hr>
+
+<h1>06 - Directivas: estructurales, de atributos y más</h1>
+
+<h3>Directivas estructurales: </h3>
+<p>  
+    Se refiere a que pueden modificar elementos del DOM, por ejemplo, ocultar o mostrar una etiqueta HTML, un ejemplo de directivas estructurales son:
+    - ngFor
+    - ngIf
+</p>
+
+<h4>ngFor:</h4>
+<p>
+    En este caso para poner un ejemplo de <b>ngFor</b>, tenemos un array declarado y definido
+    en nuestra clase y lo vamos a renderizar con la directiva ngFor.
+</p>
+
+
+<ul *ngFor="let city of cities">
+    <li>{{ city }}</li>
+</ul>
+
+<!-- 
+    ? Explicación de ngFor
+
+    para renderizar un array con ngFor, tenemos que usar el asterisco '*' seguido de la directiva,
+    dentro tenemos que declarar una variable local con 'let' con el nombre de city seguido de 'of' y el array
+
+    Y usamos la interpolación para imprimir la variable city
+ -->
+
+<h4>ngIf:</h4>
+<p>
+    Ahora vamos a poner en practica el <b>ngIf</b>,
+    tenemos un input el cual tiene una directiva ngModel, asociada a una propiedad llamada name,
+    y tenemos una etiqueta 'p' la cual se va a mostrar solo cuando la propidad input tenga algun valor
+</p>
+
+<input [(ngModel)]="name" type="text" placeholder="Escribe tu nombre">
+
+<p *ngIf="name != ''">Tu nombre es: {{ name }}</p>
+
+<!-- 
+    ? Explicación de ngIf
+
+    Debemos agregar esta directiva a cualquier elemento cuando queremos cambiar su comportamiento,
+    solo basta con ponerselo y darle una expresion
+ -->
+
+<h3>Directivas de atributos</h3>
+<p>Para añadir una directiva de atributos a un elemento se debe utilizar la sintaxis de corchete</p>
+
+<h4>ngClass</h4>
+<p>Con esta directiva podemos colocarle clases a los elementos</p>
+
+<!-- Podemos pasarle un string de las clases css -->
+<ul *ngFor="let student of students">
+    <li [ngClass]="'selected color-white'">{{ student }} (clases colocadas con un string) [ngClass]="'selected color-white'"</li>
+</ul>
+
+<hr>
+
+<!-- Podemos pasarle un array de las clases css -->
+<ul *ngFor="let tutor of tutors">
+    <li [ngClass]="['selected', 'color-white']">{{ tutor }} (clases colocadas con un array) [ngClass]="['selected', 'color-white']"</li>
+</ul>
+
+<hr>
+
+<!-- Podemos pasarle un objeto de las clases css -->
+<ul *ngFor="let pay of pays">
+    <li [ngClass]="{'selected': pay == '200.000'}">{{ pay }} (clases colocadas con un objeto) <code ngNonBindable> [ngClass]='selected': false}</code></li>
+</ul>
+
+
+
