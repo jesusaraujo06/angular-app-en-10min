@@ -1,6 +1,38 @@
-# MyApp
+# Estudiando Angular
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.2.2.
+Este proyecto fue generado por [Angular CLI](https://github.com/angular/angular-cli) version 13.2.2.
+
+## ¿Que es un componente en Angular?
+En angular los componentes son similares a lo que teníamos en Angular JS que llamábamos Controller.
+
+Un componente básicamente es markup, meta-data y clase, todo esto combinado crea una Ui (User interface)
+
+Los componentes tiene estilos, una logica, un fichero de testing y un markup que es el html.
+
+Estos componentes se pueden reutilizar a lo largo de nuestra aplicación, por ejemplo, podemos crear un boton como componente y reutilizarlo a lo largo de nuestra app.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ## Development server
 
