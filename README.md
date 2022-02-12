@@ -5,11 +5,11 @@ Este proyecto fue generado por [Angular CLI](https://github.com/angular/angular-
 ## ¿Que es un componente en Angular?
 En angular los componentes son similares a lo que teníamos en Angular JS que llamábamos Controller.
 
-Un componente básicamente es markup, meta-data y clase, todo esto combinado crea una Ui (User interface)
+Un componente básicamente es un markup, meta-data y una clase, todo esto combinado crea una UI (User interface)
 
-Los componentes tiene estilos, una logica, un fichero de testing y un markup que es el html.
+Los componentes tienen estilos, una logica, un fichero de testing y un markup que es el html.
 
-Estos componentes se pueden reutilizar a lo largo de nuestra aplicación, por ejemplo, podemos crear un boton como componente y reutilizarlo a lo largo de nuestra app.
+Estos componentes se pueden reutilizar a lo largo de nuestra aplicación, por ejemplo, podemos crear un boton como componente y reutilizarlo en otros componentes.
 
 
 

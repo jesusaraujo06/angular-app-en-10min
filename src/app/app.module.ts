@@ -10,11 +10,13 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { ButtonComponent } from './button/button.component';
 
 @NgModule({
   // En declarations, declaramos los componentes a utilizar
   declarations: [
-    AppComponent
+    AppComponent,
+    ButtonComponent
   ],
   // En imports, importamos o inyectamos modulos por ejemplo HttpClientModule
   imports: [
