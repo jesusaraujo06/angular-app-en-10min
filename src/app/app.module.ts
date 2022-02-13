@@ -16,6 +16,8 @@ import { NavesComponent } from './naves/naves.component';
 import { EnlaceDeDatosBidireccionalComponent } from './enlace-de-datos-bidireccional/enlace-de-datos-bidireccional.component';
 import { FormsModule } from '@angular/forms';
 import { DirectivasComponent } from './directivas/directivas.component';
+import { CicloDeVidaComponenteComponent } from './ciclo-de-vida-componente/ciclo-de-vida-componente.component';
+import { FormNewItemComponent } from './form-new-item/form-new-item.component';
 
 @NgModule({
   // En declarations, declaramos los componentes a utilizar
@@ -25,7 +27,9 @@ import { DirectivasComponent } from './directivas/directivas.component';
     InterpolacionComponent,
     NavesComponent,
     EnlaceDeDatosBidireccionalComponent,
-    DirectivasComponent
+    DirectivasComponent,
+    CicloDeVidaComponenteComponent,
+    FormNewItemComponent
   ],
   // En imports, importamos o inyectamos modulos por ejemplo HttpClientModule
   imports: [

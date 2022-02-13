@@ -1,14 +1,41 @@
 <hr>
 
-<h1>Ejemplo consumiendo una API de SpaceX</h1>
+<div class="row">
+    <h1>Ejemplo consumiendo una API de SpaceX</h1>
+    <div class="col-md-12 my-1">
+        <app-form-new-item (newItemEvent)="addNewPropuesta($event)" [label]="'Nave'" [className]="'btn-success'"></app-form-new-item>
+    </div>
+    <div *ngIf="arrayPropuestas" class="col-md-12 my-1">
+        <h3>Propuestas de nave:</h3>
+        <ul>
+            <li *ngFor="let item of arrayPropuestas">
+                {{ item }}
+            </li>
+        </ul>
+    </div>
+    <div class="col-md-12 my-1">
+        <div *ngIf="selection">
+            <p>La nave es: {{ selection }}</p>
+            <!-- <button (click)="onClear()">Borrar seleccion</button> -->
 
-<div class="gallery">
-<div class="item" *ngFor="let item of data">
-    <h4>{{ item.name }}</h4>
-    <p>{{ item.description }}</p>
-
-    <div class="imgs">
-    <img [src]="img" alt="" *ngFor="let img of item.flickr_images">
+            <!-- ? Reutilización del componente button -->
+            <app-button (click)="onClear()" [color]="'red'" [label1]="'Borrar selección'" [selection]="selection"></app-button>
+            <!-- <app-button  [color]="'blue'" [label1]="'Actualizar'"></app-button>
+            <app-button  [color]="'green'" [label1]="'Crear'"></app-button> -->
+        </div>
+    </div>
+    <div class="col-md-12 my-1">
+        <div class="gallery">
+            <div class="item" *ngFor="let item of data">
+                <h4>{{ item.name }}</h4>
+                <p>{{ item.description }}</p>
+        
+                <div class="imgs">
+                <img (click)="onImgClicked(img, $event)" [ngClass]="{'border': img === selection}" [src]="img" alt="" *ngFor="let img of item.flickr_images;">
+                </div>
+            </div>
+        </div>
     </div>
 </div>
-</div>
+
+

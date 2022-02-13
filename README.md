@@ -26,18 +26,32 @@ Las directivas son como atributos que pueden cambiar la apariencia o el comporta
   - ngFor
   - ngIf
 
-- De atributos
+- De atributos:
+  Se refiere a los que podican los atributos de   una elementos como sus clases o estilos, por ejemplo:
+  - ngClass
+  - ngStyle
+  
 
 - Directivas customs
 
 - Componentes - son directivas con template
 
+## Ciclo de vida de componentes
+https://medium.com/williambastidasblog/eventos-del-ciclo-de-vida-en-angular-41ddf766273b
 
 
+## Event binding
+Nos permite escuchar y responder a las acciones del usuario, como por ejemplo: pulsaciones de teclas, movimientos del mouse, clics, etc.
 
+¡Abrir el componente naves para ver un ejemplo de este tema!
 
+## Decoradores input y output
+- ¿Que es un decorador?
+  Un decorador es un tipo especial de declaración que se puede adjuntar a una clase, metodo, descriptor de acceso, propiedad o parámetro.
 
+  Si tenemos una clase y le asignamos un decorador, la clase se modificará en base a una configuración que nosotros le podemos pasar
 
+- El decorador @input() en un componente (o directiva) hijo, significa que la propiedad puede recibir su valor de su componente padre.
 
 
 

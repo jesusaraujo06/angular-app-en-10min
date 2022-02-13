@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnChanges, OnDestroy, OnInit, SimpleChanges } from '@angular/core';
 
 /**
  * En angular el arroba '@' es un decorador.
@@ -27,7 +27,15 @@ import { Component, OnInit } from '@angular/core';
 })
 
 // Funcion normal de Typescript, donde estaran nuestros metodos
-export class ButtonComponent implements OnInit {
+export class ButtonComponent implements OnChanges, OnInit, OnDestroy {
+
+  /**
+   * ? Usaremos el decorador @input
+   * para recibir las variables que nos estan devolviendo
+   */
+  @Input() color !: string;
+  @Input() label1 !: string;
+  @Input() selection !: string;
 
   /**
    * El constructor es un defualt method, que siempre se ejecuta cuando se crea una clase,
@@ -50,10 +58,19 @@ export class ButtonComponent implements OnInit {
    ** 'void' quiere decir que el metodo no retorna ningun valor
    */
 
+  ngOnChanges(changes: SimpleChanges): void {
+      console.log('Changes -> ', changes)
+  }
+
   ngOnInit(): void {
 
+    console.log('onInit')
     // ! Return da error por que el metodo tiene void
     // return 0;
+  }
+
+  ngOnDestroy(): void {
+      console.log('OnDestroy')
   }
 
 }

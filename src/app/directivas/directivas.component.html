@@ -1,6 +1,6 @@
 <hr>
 
-<h1>06 - Directivas: estructurales, de atributos y más</h1>
+<h1>06, 07 - Directivas: estructurales, de atributos y más</h1>
 
 <h3>Directivas estructurales: </h3>
 <p>  
@@ -54,22 +54,27 @@
 <p>Con esta directiva podemos colocarle clases a los elementos</p>
 
 <!-- Podemos pasarle un string de las clases css -->
-<ul *ngFor="let student of students">
-    <li [ngClass]="'selected color-white'">{{ student }} (clases colocadas con un string) [ngClass]="'selected color-white'"</li>
+<ul>
+    <li *ngFor="let student of students" [ngClass]="'selected color-white'">{{ student }} (clases colocadas con un string) [ngClass]="'selected color-white'"</li>
 </ul>
 
 <hr>
 
 <!-- Podemos pasarle un array de las clases css -->
-<ul *ngFor="let tutor of tutors">
-    <li [ngClass]="['selected', 'color-white']">{{ tutor }} (clases colocadas con un array) [ngClass]="['selected', 'color-white']"</li>
+<ul>
+    <li *ngFor="let tutor of tutors" [ngClass]="['selected', 'color-white']">{{ tutor }} (clases colocadas con un array) [ngClass]="['selected', 'color-white']"</li>
 </ul>
 
 <hr>
 
 <!-- Podemos pasarle un objeto de las clases css -->
-<ul *ngFor="let pay of pays">
-    <li [ngClass]="{'selected': pay == '200.000'}">{{ pay }} (clases colocadas con un objeto) <code ngNonBindable> [ngClass]='selected': false}</code></li>
+<ul>
+    <li *ngFor="let pay of pays" [ngClass]="{'selected': pay == '200.000', 'color-white:': pay !== '100.000'}">{{ pay }} (clases colocadas con un objeto) <code ngNonBindable> [ngClass]='selected': false}</code></li>
+</ul>
+
+<h4>ngStyle</h4>
+<ul>
+    <li *ngFor="let pay of pays" [ngStyle]="{'color': 'red', 'background': pay == '100.000' ? 'black' : 'green'}">{{ pay }}</li>
 </ul>
 
 
