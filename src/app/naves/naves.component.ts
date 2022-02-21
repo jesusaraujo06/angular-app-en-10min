@@ -6,12 +6,15 @@ import { HttpClient } from '@angular/common/http';
   templateUrl: './naves.component.html',
   styleUrls: ['./naves.component.scss']
 })
+
 export class NavesComponent implements OnInit {
 
   title = 'my-app';
   data: any[] = [];
   selection!: string;
   arrayPropuestas: any[] = [];
+  criteria = '';
+
 
   constructor(private http: HttpClient) { }
 
@@ -26,13 +29,17 @@ export class NavesComponent implements OnInit {
     this.arrayPropuestas.push(propuesta);
   }
 
-  onImgClicked(img: string, event: Event): void {
+  onImgClicked(name: string, event: Event): void {
     
-    this.selection = img;
+    this.selection = name;
   }
 
   onClear(): void{
     this.selection = '';
+  }
+
+  onSearch(): void{
+    console.log('OnSearch');
   }
 
 }

@@ -1,0 +1,91 @@
+<h1>Contac form</h1>
+
+<!-- Angular hará un seguimiento de este formulario y sus campos -->
+<form #contactForm="ngForm" (ngSubmit)="onSubmit(contactForm)">
+  <!-- Text -->
+  <div class="mb-4">
+    <label for="name" class="form-label">Name</label>
+    <!-- Aqui utilizamos banana box para vincular el input de manera bidireccional -->
+    <input
+      id="name"
+      name="name"
+      type="text"
+      class="form-control"
+      [(ngModel)]="model.name"
+      #name="ngModel"
+      required
+    />
+    <div [hidden]="name.valid || name.pristine" class="alert alert-danger">
+      This field is required.
+    </div>
+  </div>
+
+  <!-- Check -->
+  <div class="mb-4 form-check">
+    <label for="checkAdult" class="form-label">
+        Are you over 18 years of age?
+    </label>
+    <input
+      id="checkAdult"
+      name="checkAdult"
+      type="checkbox"
+      class="form-check-input"
+      [(ngModel)]="model.checkAdult"
+      #checkAdult="ngModel"
+      required
+    />
+    <div
+      [hidden]="checkAdult.valid || checkAdult.pristine"
+      class="alert alert-danger"
+    >
+      This field is required.
+    </div>
+  </div>
+
+  <!-- Select -->
+  <div class="mb-4">
+    <label for="department" class="form-label">Department</label>
+    <select
+      name="department"
+      id="department"
+      class="form-select form-select-sm"
+      ngModel
+      #department="ngModel"
+    >
+      <option value="" selected>Open this select menu</option>
+      <option value="marketing">Marketing</option>
+      <option value="sales">Sales</option>
+      <option value="other">other</option>
+    </select>
+    <div
+      [hidden]="department.valid || department.pristine"
+      class="alert alert-danger"
+    >
+      This field is required.
+    </div>
+  </div>
+
+  <!-- Textarea -->
+  <div class="mb-4">
+    <label for="comment" class="form-label">Comment</label>
+    <textarea
+      name="comment"
+      id="comment"
+      rows="4"
+      class="form-control"
+      placeholder="Leave a comment.."
+      ngModel
+    ></textarea>
+  </div>
+
+  <div class="d-grid gap-2 col-4 float-end">
+      <!-- Deshabilitar el boton si el contact form es invalido -->
+    <button [disabled]="contactForm.invalid" type="submit" class="btn btn-primary btn-lg">Send</button>
+  </div>
+</form>
+
+<div>
+    <pre>
+        {{ contactForm.value | json }}
+    </pre>
+</div>

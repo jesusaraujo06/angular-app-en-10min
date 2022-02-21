@@ -1,4 +1,4 @@
-import { Component, Input, OnChanges, OnDestroy, OnInit, SimpleChanges } from '@angular/core';
+import { Component, Input, ChangeDetectionStrategy, OnChanges, OnDestroy, OnInit, SimpleChanges } from '@angular/core';
 
 /**
  * En angular el arroba '@' es un decorador.
@@ -16,7 +16,7 @@ import { Component, Input, OnChanges, OnDestroy, OnInit, SimpleChanges } from '@
   // template: `<button>Button desde la configuración template</button>`,
   
   // Definir la ruta de los estilos
-  styleUrls: ['./button.component.scss']
+  styleUrls: ['./button.component.scss'],
 
   // O tambien podemos pasarle los estilos directamente
   // styles: [
@@ -24,10 +24,14 @@ import { Component, Input, OnChanges, OnDestroy, OnInit, SimpleChanges } from '@
   //   'h1 { font-size: 20px }'
   // ]
 
+  // Cambiar la estrategia de detección de cambios
+  changeDetection: ChangeDetectionStrategy.OnPush,
+
 })
 
 // Funcion normal de Typescript, donde estaran nuestros metodos
-export class ButtonComponent implements OnChanges, OnInit, OnDestroy {
+// export class ButtonComponent implements OnChanges, OnInit, OnDestroy {
+export class ButtonComponent  {
 
   /**
    * ? Usaremos el decorador @input
@@ -35,7 +39,8 @@ export class ButtonComponent implements OnChanges, OnInit, OnDestroy {
    */
   @Input() color !: string;
   @Input() label1 !: string;
-  @Input() selection !: string;
+  // @Input() selection !: string;
+  @Input() className : string = 'btn-warning';
 
   /**
    * El constructor es un defualt method, que siempre se ejecuta cuando se crea una clase,
@@ -58,19 +63,23 @@ export class ButtonComponent implements OnChanges, OnInit, OnDestroy {
    ** 'void' quiere decir que el metodo no retorna ningun valor
    */
 
-  ngOnChanges(changes: SimpleChanges): void {
-      console.log('Changes -> ', changes)
-  }
+  // ngOnChanges(changes: SimpleChanges): void {
+  //     console.log('Changes -> ', changes)
+  // }
 
-  ngOnInit(): void {
+  // ngOnInit(): void {
 
-    console.log('onInit')
-    // ! Return da error por que el metodo tiene void
-    // return 0;
-  }
+  //   console.log('onInit')
+  //   // ! Return da error por que el metodo tiene void
+  //   // return 0;
+  // }
 
-  ngOnDestroy(): void {
-      console.log('OnDestroy')
+  // ngOnDestroy(): void {
+  //     console.log('OnDestroy')
+  // }
+
+  counterRender(): void {
+    console.log('Render Button');
   }
 
 }

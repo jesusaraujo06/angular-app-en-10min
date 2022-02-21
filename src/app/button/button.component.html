@@ -1,3 +1,7 @@
 <!-- Aqui agregamos todo el HTML de nuestro componente -->
 
-<button [ngStyle]="{'color': color}">{{ label1 }}</button>
+<button class="btn" [ngClass]="[className]">{{ label1 }}</button>
+
+<!-- Funcion para revisar cuantas veces se renderiza este componente -->
+<!-- Para producción comentarlo -->
+{{ counterRender() }}

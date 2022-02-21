@@ -1,38 +1,50 @@
-<hr>
-
 <div class="row">
-    <h1>Ejemplo consumiendo una API de SpaceX</h1>
-    <div class="col-md-12 my-1">
-        <app-form-new-item (newItemEvent)="addNewPropuesta($event)" [label]="'Nave'" [className]="'btn-success'"></app-form-new-item>
+    <h1 class="mb-4">Naves de SpaceX</h1> 
+    <p>Actualización: {{ '2/20/2022, 9:03 AM' | date:'short' | uppercase }}</p>
+    <p>Valor maximo: {{ '10000' | currency: 'EUR' }}</p>
+    <p>Valor maximo: {{ '10000' | currency: 'COP' }}</p>
+    <div class="col-md-12 mt-2">
+        <app-form-new-item (newItemEvent)="addNewPropuesta($event)" [label]="'Nueva nave'" [className]="'btn-success'"></app-form-new-item>
     </div>
-    <div *ngIf="arrayPropuestas" class="col-md-12 my-1">
-        <h3>Propuestas de nave:</h3>
+    <div *ngIf="arrayPropuestas.length !== 0" class="col-md-12 mt-4">
+        <h5>Propuestas de nave:</h5>
+
         <ul>
             <li *ngFor="let item of arrayPropuestas">
-                {{ item }}
+                {{ item | titlecase }}
             </li>
         </ul>
     </div>
-    <div class="col-md-12 my-1">
-        <div *ngIf="selection">
-            <p>La nave es: {{ selection }}</p>
+
+
+    <hr class="my-4">
+    <div class="col-md-12 mb-2">
+        <h3>Lista de naves ya existentes</h3>
+        <!-- <div class="col-12">
+            <input type="text" (keypress)="onSearch()">
+        </div> -->
+        
+        <div *ngIf="selection" class="my-2">
+            <p class="d-inline"><b>Nave seleccionada:</b> {{ selection }}</p>
             <!-- <button (click)="onClear()">Borrar seleccion</button> -->
 
             <!-- ? Reutilización del componente button -->
-            <app-button (click)="onClear()" [color]="'red'" [label1]="'Borrar selección'" [selection]="selection"></app-button>
+            <app-button (click)="onClear()" [className]="'btn-sm btn-danger d-inline ms-3'" [label1]="'Borrar selección'"></app-button>
             <!-- <app-button  [color]="'blue'" [label1]="'Actualizar'"></app-button>
             <app-button  [color]="'green'" [label1]="'Crear'"></app-button> -->
         </div>
     </div>
     <div class="col-md-12 my-1">
+        <input type="text" class="form-control" placeholder="Filtrar..." [(ngModel)]="criteria">
+    </div>
+    <div class="col-md-12 my-1">
         <div class="gallery">
-            <div class="item" *ngFor="let item of data">
+            <!-- Utilizando pipe personalizado para filtrar,
+            pero no es la mejor forma de hacer un filter, para eso
+            esta la programacion reactiva, pero esto es solo de demostración -->
+            <div class="item" *ngFor="let item of (data | filter:criteria)" (click)="onImgClicked(item.name, $event)" [ngClass]="{'border border-primary border-radius': item.name == selection}">
                 <h4>{{ item.name }}</h4>
                 <p>{{ item.description }}</p>
-        
-                <div class="imgs">
-                <img (click)="onImgClicked(img, $event)" [ngClass]="{'border': img === selection}" [src]="img" alt="" *ngFor="let img of item.flickr_images;">
-                </div>
             </div>
         </div>
     </div>

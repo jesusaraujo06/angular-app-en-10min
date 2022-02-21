@@ -14,10 +14,15 @@ import { ButtonComponent } from './button/button.component';
 import { InterpolacionComponent } from './interpolacion/interpolacion.component';
 import { NavesComponent } from './naves/naves.component';
 import { EnlaceDeDatosBidireccionalComponent } from './enlace-de-datos-bidireccional/enlace-de-datos-bidireccional.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DirectivasComponent } from './directivas/directivas.component';
 import { CicloDeVidaComponenteComponent } from './ciclo-de-vida-componente/ciclo-de-vida-componente.component';
 import { FormNewItemComponent } from './form-new-item/form-new-item.component';
+import { FilterPipe } from './pipes/filter.pipe';
+import { ContactComponent } from './contact/contact.component';
+import { ContactReactiveComponent } from './contact-reactive/contact-reactive.component';
+import { HomeComponent } from './home/home.component';
+import { NavbarComponent } from './navbar/navbar.component';
 
 @NgModule({
   // En declarations, declaramos los componentes a utilizar
@@ -29,14 +34,20 @@ import { FormNewItemComponent } from './form-new-item/form-new-item.component';
     EnlaceDeDatosBidireccionalComponent,
     DirectivasComponent,
     CicloDeVidaComponenteComponent,
-    FormNewItemComponent
+    FormNewItemComponent,
+    FilterPipe,
+    ContactComponent,
+    ContactReactiveComponent,
+    HomeComponent,
+    NavbarComponent
   ],
   // En imports, importamos o inyectamos modulos por ejemplo HttpClientModule
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   // En providers, podemos inyectar servicios en nuestra aplicacion
   providers: [],

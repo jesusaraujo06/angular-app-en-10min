@@ -1,7 +1,7 @@
 <form action="">
     <div class="row align-items-center">
         <div class="col-auto">
-            <label for="newItem" class="col-form-label">Nuevo {{ label }}</label>
+            <label for="newItem" class="col-form-label">{{ label }}</label>
         </div>
         <div class="col-auto">
             <input #newItem type="text" id="newItem" class="form-control">
@@ -13,3 +13,7 @@
         </div>
     </div>
 </form>
+
+<!-- Funcion para revisar cuantas veces se renderiza este componente -->
+<!-- Para producción comentarlo -->
+{{ counterRender() }}

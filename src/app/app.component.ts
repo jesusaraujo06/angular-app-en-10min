@@ -23,4 +23,8 @@ export class AppComponent {
   ngOnInit() {
 
   }
+
+  onSearch(): void{
+    console.log('OnSearch');
+  }
 }
