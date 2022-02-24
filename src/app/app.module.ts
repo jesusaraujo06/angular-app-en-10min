@@ -23,6 +23,7 @@ import { ContactComponent } from './contact/contact.component';
 import { ContactReactiveComponent } from './contact-reactive/contact-reactive.component';
 import { HomeComponent } from './home/home.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 @NgModule({
   // En declarations, declaramos los componentes a utilizar
@@ -39,7 +40,8 @@ import { NavbarComponent } from './navbar/navbar.component';
     ContactComponent,
     ContactReactiveComponent,
     HomeComponent,
-    NavbarComponent
+    NavbarComponent,
+    PageNotFoundComponent
   ],
   // En imports, importamos o inyectamos modulos por ejemplo HttpClientModule
   imports: [
